@@ -27,9 +27,8 @@ func main() {
 		{10, 9, 2, 0, -5},
 		{9, 8, 7, 6, 5},
 	}
-	idxs := findElements(a)
 
-	if len(idxs) == 0 {
+	if idxs := findElements(a); len(idxs) == 0 {
 		println("НЕТ")
 	} else {
 		for _, idx := range idxs {
