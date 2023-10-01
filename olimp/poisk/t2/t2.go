@@ -1,25 +1,8 @@
 package main
 
-import "fmt"
-
-func getSize(a [][]int) (n, m int) {
-	n = len(a)
-	if n < 1 {
-		panic("empty a")
-	}
-
-	m = len(a[0])
-	if m < 1 {
-		panic("empty a[0]")
-	}
-	for i := range a {
-		if len(a[i]) != m {
-			panic(fmt.Errorf("length of a[%d] != %d", i, m))
-		}
-	}
-
-	return
-}
+import (
+	"git.lan.316.su/go/algo/shared"
+)
 
 func main() {
 	// http://algolist.manual.ru/olimp/poi_prb.php
@@ -29,7 +12,7 @@ func main() {
 		{20, 21, 22, 23, 24, 25, 26, 27, 28, 29},
 	}
 
-	n, m := getSize(a)
+	n, m := shared.GetSize2D(a)
 	x := 15
 	i, j := n-1, m-1
 

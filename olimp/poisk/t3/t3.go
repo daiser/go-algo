@@ -8,8 +8,8 @@ type index struct {
 
 func findElements(a [][]int) []index {
 	idxs := make([]index, 0)
-
 	n, m := shared.GetSize2D(a)
+
 	for i := 0; i < n && a[i][0] >= i; i++ {
 		for j := 0; j < m && a[i][j] >= i+j; j++ {
 			if a[i][j] == i+j {

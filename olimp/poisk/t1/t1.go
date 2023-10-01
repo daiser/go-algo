@@ -1,22 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-func getSize(a [][]int) (n, m int) {
-	n = len(a)
-	if n < 1 {
-		panic("empty a")
-	}
-
-	m = len(a[0])
-	for i, an := range a {
-		if len(an) != m {
-			panic(fmt.Errorf("length of a[%d] != %d", i, m))
-		}
-	}
-
-	return
-}
+	"git.lan.316.su/go/algo/shared"
+)
 
 func isFound(a [][]int, indexes []int) bool {
 	found := true
@@ -36,7 +24,7 @@ func main() {
 		{-1000, 3, 1000},
 	}
 
-	n, m := getSize(a)
+	n, m := shared.GetSize2D(a)
 	indexes := make([]int, n)
 	for indexes[0] < m && !isFound(a, indexes) {
 		indexes[0]++
